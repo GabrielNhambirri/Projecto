@@ -12,6 +12,13 @@ package programa;
 public class Jogo
 {
 
+    Equipe equipeA;
+    Equipe equipeB;
+    private byte nrGolosA;
+    private byte nrGolosB;
+    
+    
+    
     public Jogo(byte nrGolosA, byte nrGolosB)
     {
         equipeA = new Equipe();
@@ -60,8 +67,5 @@ public class Jogo
         this.nrGolosB = nrGolosB;
     }
 
-    Equipe equipeA;
-    Equipe equipeB;
-    private byte nrGolosA;
-    private byte nrGolosB;
+    
 }
