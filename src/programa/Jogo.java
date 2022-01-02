@@ -11,7 +11,7 @@ package programa;
  */
 public class Jogo
 {
-   /// Vamossssss
+   
     Equipe equipeA;
     Equipe equipeB;
     private byte nrGolosA;
