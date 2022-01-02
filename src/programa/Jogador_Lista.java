@@ -10,5 +10,5 @@ package programa;
  * @author Gabriel
  */
 public class Jogador_Lista {
-    
+    //Sem cogigo
 }
