@@ -11,10 +11,11 @@ package programa;
  */
 public class Equipe
 {//Comentei agora
-    private String nome;
-    private String nome_coach;
-    private Jogador[] jogador;
-    ////////////////
+ //Atributos private foram substituidos por protected, devido a heranca aplicada em equipe lista   
+    protected String nome;
+    protected String nome_coach;
+    protected Jogador[] jogador;
+    
     public Equipe() {
         this.jogador = new Jogador[15];
     }

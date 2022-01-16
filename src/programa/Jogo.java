@@ -26,6 +26,13 @@ public class Jogo
         this.nrGolosA = nrGolosA;
         this.nrGolosB = nrGolosB;
     }
+    
+    public Jogo(byte nrGolosA,byte nrGolosB, Equipe_Lista equipeA,Equipe_Lista equipeB){
+        this.equipeA = equipeA;
+        this.equipeB = equipeB;
+        this.nrGolosA = nrGolosA;
+        this.nrGolosB = nrGolosB;
+    }
 
     public Equipe getEquipeA()
     {
