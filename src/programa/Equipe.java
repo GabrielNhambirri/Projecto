@@ -14,7 +14,7 @@ public class Equipe
     private String nome;
     private String nome_coach;
     private Jogador[] jogador;
-    //hjhj
+    ////////////////
     public Equipe() {
         this.jogador = new Jogador[15];
     }
