@@ -58,4 +58,14 @@ public interface Menus {
             + "[1] - Equipes\n"
             + "[2] - Jogos\n";
     
+    public final String MENU_ACTUALIZAR_EQUIPE =
+              "--------------------------\n"
+            + "      ACTUALIZAR_EQUIPE   \n"
+            + "--------------------------\n"
+            + "[1] - Nome da Equipe\n"
+            + "[2] - Nome do Treinador\n"
+            + "[3] - Adicionar Jogador\n"
+            + "[4] - Remover Jogador";
+         
+    
 }

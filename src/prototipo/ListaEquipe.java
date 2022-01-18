@@ -41,7 +41,7 @@ public class ListaEquipe implements Menus {
         
         switch(op){
             case '1':
-                listaEquipe.retornarElemento();
+                listaEquipe.mostrarLista();
                 break;
             case '2':
                 break;

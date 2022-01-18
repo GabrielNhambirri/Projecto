@@ -12,7 +12,7 @@ package programa;
 public class Equipe
 {//Comentei agora
  //Atributos private foram substituidos por protected, devido a heranca aplicada em equipe lista   
-    protected String nome;
+    protected String nome_equipe, id;
     protected String nome_coach;
     protected Jogador[] jogador;
     
@@ -22,16 +22,16 @@ public class Equipe
     
     public Equipe(final String nome, final String nome_coach) {
         this.jogador = new Jogador[15];
-        this.nome = nome;
+        this.nome_equipe = nome;
         this.nome_coach = nome_coach;
     }
     
     public String getNome() {
-        return this.nome;
+        return this.nome_equipe;
     }
     
     public void setNome(final String nome) {
-        this.nome = nome;
+        this.nome_equipe = nome;
     }
     
     public String getNome_coach() {
@@ -45,6 +45,16 @@ public class Equipe
     public Jogador getJogador(final byte num) {
         return this.jogador[num];
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    
     
     public void setJogador(final byte num, final Jogador jogador) {
         this.jogador[num] = jogador;

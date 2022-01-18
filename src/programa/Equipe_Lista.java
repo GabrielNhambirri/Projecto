@@ -15,10 +15,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Equipe_Lista extends Equipe {
-    //Antigo nome Equipe_Lista
+    //Antigo nome_equipe Equipe_Lista
     //O objecto equipe foi eliminado, ao inves disso fiz a classe estender Equipe
     //Nas linhas onde havia this.equipe essa parte foi eliminada, chamndo apenas os metodos
-    //Atributo nome apagado, pois é herdado da classe Equipe
+    //Atributo nome_equipe apagado, pois é herdado da classe Equipe
     //getters e setters foram substituidos pela chamada do proprio atributo
    
     
@@ -33,23 +33,23 @@ public class Equipe_Lista extends Equipe {
 
     public void inserirNome() throws IOException {
         System.out.println("Introduza o nome da equipe: ");
-        this.nome = this.x.readLine();
-        if (this.nome.equalsIgnoreCase("")) {
+        this.nome_equipe = this.x.readLine();
+        if (this.nome_equipe.equalsIgnoreCase("")) {
             System.out.println("Introduza um nome valido!");
             this.inserirNome();
         } else {
-            setNome(this.nome);
+            setNome(this.nome_equipe);
         }
     }
 
     public void inserirNome_Coach() throws IOException {
         System.out.println("Introduza o nome do treinador: ");
-        this.nome = this.x.readLine();
-        if (this.nome.equalsIgnoreCase("")) {
+        this.nome_equipe = this.x.readLine();
+        if (this.nome_equipe.equalsIgnoreCase("")) {
             System.out.println("Introduza um nome valido!");
             this.inserirNome_Coach();
         } else {
-            setNome_coach(this.nome);
+            setNome_coach(this.nome_equipe);
         }
     }
 
@@ -58,9 +58,14 @@ public class Equipe_Lista extends Equipe {
             String pedido = "Introduza o nome do Jogador:  ";
             String nome = this.valida.validaString(pedido, (byte)5, (byte)45);
             pedido = "Introduza a sua idade";
+            
+            
             byte idade = this.valida.validaByte(pedido, (byte)5, (byte)35);
+            
             byte numero = menorIndice;
-            Jogador jogador = new Jogador(nome, idade, numero);
+            
+            
+            Jogador jogador = new Jogador(nome, idade, numero,"1234");
             for (int i = menorIndice + 1; i < qtd_jogador; ++i) {
                 if (super.jogador[i] != null) continue;
                 menorIndice = (byte)i;
@@ -89,7 +94,7 @@ public class Equipe_Lista extends Equipe {
             System.out.println("==============================");
             System.out.println("NOME: " + jogador[num].getNome());
             System.out.println("IDADE: " + jogador[num].getIdade());
-            System.out.println("EQUIPE: " + nome);
+            System.out.println("EQUIPE: " + nome_equipe);
             System.out.println("TREINADOR: " + getNome_coach());
         } else {
             System.out.println("Jogador nao existe");

@@ -11,14 +11,15 @@ package programa;
  */
 public class Jogador
 {
-    private String nome;
+    private String nome, id;
     private byte idade;
     private byte numero;
     
-    public Jogador(final String nome, final byte idade, final byte numero) {
+    public Jogador(final String nome, final byte idade, final byte numero, final String id) {
         this.nome = nome;
         this.idade = idade;
         this.numero = numero;
+        this.id = id;
     }
     
     public String getNome() {
@@ -44,4 +45,14 @@ public class Jogador
     public void setNumero(final byte numero) {
         this.numero = numero;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    
 }
