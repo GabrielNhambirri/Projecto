@@ -5,11 +5,13 @@
 */
 package programa;
 
+import prototipo.Identificavel;
+
 /**
  *
  * @author Gabriel
  */
-public class Jogador
+public class Jogador implements Identificavel
 {
     private String nome, id;
     private byte idade;
@@ -52,6 +54,11 @@ public class Jogador
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public String getID() {
+        return this.id; 
     }
     
     

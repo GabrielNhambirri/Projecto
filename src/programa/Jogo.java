@@ -5,22 +5,28 @@
  */
 package programa;
 
+import prototipo.Identificavel;
+
 /**
  *
  * @author Gabriel
  */
-public class Jogo
+public class Jogo implements Identificavel
 {
    
     Equipe equipeA;
     Equipe equipeB;
     private byte nrGolosA;
     private byte nrGolosB;
+    private String id;
+    private static int contaID = 0;
     
     
     
     public Jogo(byte nrGolosA, byte nrGolosB)
     {
+        this.id = "" + contaID;
+        contaID ++;
         equipeA = new Equipe();
         equipeB = new Equipe();
         this.nrGolosA = nrGolosA;
@@ -28,6 +34,8 @@ public class Jogo
     }
     
     public Jogo(byte nrGolosA,byte nrGolosB, Equipe_Lista equipeA,Equipe_Lista equipeB){
+        this.id = "" + contaID;
+        contaID ++;
         this.equipeA = equipeA;
         this.equipeB = equipeB;
         this.nrGolosA = nrGolosA;
@@ -72,6 +80,21 @@ public class Jogo
     public void setNrGolosB(byte nrGolosB)
     {
         this.nrGolosB = nrGolosB;
+    }
+
+    public String getId() {
+        return  this.id;
+    }
+
+    @Override
+    public String getID() {
+        return this.id;
+    }
+
+    @Override
+    public String getNome() {
+       return "{EquipeA - nome: "+ this.equipeA.getNome() + ", Golos: " + this.nrGolosA +"\n"
+              +"EquipeB - nome: }"+this.equipeB.getNome() + ", Golos: " + this.nrGolosA +"}\n\n";
     }
 
     

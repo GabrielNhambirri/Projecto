@@ -9,7 +9,7 @@ package prototipo;
  *
  * @author Gabriel
  */
-public class No<T> {
+public class No<T extends Identificavel> {
     
     private T elemento;
     private No<T> proximo;

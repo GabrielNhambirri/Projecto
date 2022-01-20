@@ -17,7 +17,7 @@ public class Programa {
         listaEquipe.inserirNome_Coach();
         listaEquipe.inserirNome();
         listaEquipe.adicionarJogador();
-        listaEquipe.imprimaJogador((byte)0);
+        listaEquipe.imprimaJogador("" + 0);
     }
     
 }

@@ -66,6 +66,8 @@ public interface Menus {
             + "[2] - Nome do Treinador\n"
             + "[3] - Adicionar Jogador\n"
             + "[4] - Remover Jogador";
-         
     
+    public final String MENU_ATUALIZAR_JOGO =
+              "[1] - Alterar o numero de golos da Equipe A"
+            + "[2] - Alterar o numero de golos da equipe B";
 }

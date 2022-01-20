@@ -1,7 +1,7 @@
 
 package prototipo;
 
-public class ListaEncadeada<T> {
+public class ListaEncadeada <T extends Identificavel> {
     
     private No<T> inicio;
     private No<T> actual;
@@ -15,6 +15,10 @@ public class ListaEncadeada<T> {
             this.actual = celula;
         }
         
+    }
+
+    public No<T> getInicio() {
+        return inicio;
     }
     
     public int contarNos(){  //Conta os nos que temos na lista
@@ -85,10 +89,9 @@ public class ListaEncadeada<T> {
     
     public void mostrarLista(){
         
-        No noTemp = inicio;
+        No <T> noTemp = inicio;
         while(noTemp !=null){
-            System.out.println(noTemp);
-            
+            System.out.println("ID: " + noTemp.getElemento().getID() + " - Nome: " + noTemp.getElemento().getNome());
             noTemp = noTemp.getProximo();
           
         }

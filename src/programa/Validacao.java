@@ -52,4 +52,19 @@ public class Validacao {
         } while (valor < min || valor > max);
         return valor;
     }
+    
+    public int validaInt(String msg,int min, int max) throws IOException {
+        int valor;
+        try{
+        do {
+               System.out.println(msg);
+            if ((valor = Integer.parseInt(this.x.readLine())) >= min && valor <= max) continue;
+            System.out.println("O comprimento deve ser no minimo " + min + " e no maximo " + max);
+        } while (valor < min || valor > max);
+        }catch(IOException ex){
+            System.out.println("Erro de leitura: " + ex.getMessage());
+            valor = -1;
+        }
+        return valor;
+    }
 }

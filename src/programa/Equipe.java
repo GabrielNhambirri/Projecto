@@ -11,12 +11,41 @@ package programa;
  */
 public class Equipe
 {//Comentei agora
- //Atributos private foram substituidos por protected, devido a heranca aplicada em equipe lista   
+ //Atributos private foram substituidos por protected, devido a heranca aplicada em equipe lista 
+    protected static int contaID = 0;
     protected String nome_equipe, id;
     protected String nome_coach;
     protected Jogador[] jogador;
+    protected byte quantidadeGolosMarcados;
+    protected byte quantidadeGolosSofridos;
+
+    public String getNome_equipe() {
+        return nome_equipe;
+    }
+
+    public void setNome_equipe(String nome_equipe) {
+        this.nome_equipe = nome_equipe;
+    }
+
+    public byte getQuantidadeGolosMarcados() {
+        return quantidadeGolosMarcados;
+    }
+
+    public void setQuantidadeGolosMarcados(byte quantidadeGolosMarcados) {
+        this.quantidadeGolosMarcados = quantidadeGolosMarcados;
+    }
+
+    public byte getQuantidadeGolosSofridos() {
+        return quantidadeGolosSofridos;
+    }
+
+    public void setQuantidadeGolosSofridos(byte quantidadeGolosSofridos) {
+        this.quantidadeGolosSofridos = quantidadeGolosSofridos;
+    }
     
     public Equipe() {
+        this.id = "" + contaID;
+        contaID ++;
         this.jogador = new Jogador[15];
     }
     
@@ -44,6 +73,10 @@ public class Equipe
     
     public Jogador getJogador(final byte num) {
         return this.jogador[num];
+    }
+    
+    public Jogador [] getJogador() {
+        return this.jogador;
     }
 
     public String getId() {
