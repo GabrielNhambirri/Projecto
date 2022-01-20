@@ -3,6 +3,7 @@ package programa;
 
 import java.io.IOException;
 import programa.Equipe_Lista;
+import prototipo.Menu;
 
 /**
  *
@@ -12,12 +13,14 @@ public class Programa {
 
    
     public static void main(final String[] args)throws IOException {
+        Menu menu = new Menu();
         
-        final Equipe_Lista listaEquipe = new Equipe_Lista();
+        
+       /* final Equipe_Lista listaEquipe = new Equipe_Lista();
         listaEquipe.inserirNome_Coach();
         listaEquipe.inserirNome();
         listaEquipe.adicionarJogador();
-        listaEquipe.imprimaJogador("" + 0);
+        listaEquipe.imprimaJogador("" + 0);*/
     }
     
 }

@@ -21,6 +21,10 @@ public class Menu implements Menus{
     private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     private static final ListaEquipe listaEquipe = new ListaEquipe();
     private static final ListaJogos  listaJogos = new ListaJogos();
+
+    public Menu() throws IOException {
+        menu();
+    }
     
     public static void menu() throws IOException{
         
@@ -179,7 +183,7 @@ public class Menu implements Menus{
         
         switch(op){
             case '1':
-                ListaEquipe.getListaEquipe();
+                ListaEquipe.getListaEquipe().mostrarLista();
             break;
             
             case '2':

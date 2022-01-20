@@ -13,7 +13,8 @@ public interface Menus {
     //Interface com Strings usadas nos menus
     
     public final String MENU_PRINCIPAL =
-              "        MENU        \n"
+              " --------------------\n"
+            +  "        MENU        \n"
             + "--------------------\n"
             + "[1] - Gestao\n" 
             + "[2] - Estaticas\n"
