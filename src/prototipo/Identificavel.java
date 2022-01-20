@@ -11,6 +11,6 @@ package prototipo;
  */
 public interface Identificavel {
     public abstract String getID();
-    
+
     public abstract String getNome();
 }

@@ -187,7 +187,8 @@ public class Menu implements Menus{
             break;
             
             case '2':
-               ListaJogos.getListaJogos();
+               ListaJogos listaJogos = new ListaJogos();
+               listaJogos.mostrarListaJogos();
             break;
         }
     }

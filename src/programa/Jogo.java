@@ -20,6 +20,9 @@ public class Jogo implements Identificavel
     private byte nrGolosB;
     private String id;
     private static int contaID = 0;
+
+    public Jogo() {
+    }
     
     
     
@@ -92,10 +95,16 @@ public class Jogo implements Identificavel
     }
 
     @Override
-    public String getNome() {
-       return "{EquipeA - nome: "+ this.equipeA.getNome() + ", Golos: " + this.nrGolosA +"\n"
-              +"EquipeB - nome: }"+this.equipeB.getNome() + ", Golos: " + this.nrGolosA +"}\n\n";
+    public String toString() {
+       return "ID do Jogo: " + this.getID()+" || " + this.equipeA.getNome() + "{"+ this.nrGolosA +"}" +"  X  "+this.equipeB.getNome() + "{" + this.nrGolosB +"}\n";
     }
+
+    @Override
+    public String getNome() {
+       return "";
+    }
+
+
 
     
 }

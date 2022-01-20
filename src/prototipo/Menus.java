@@ -13,7 +13,7 @@ public interface Menus {
     //Interface com Strings usadas nos menus
     
     public final String MENU_PRINCIPAL =
-              " --------------------\n"
+              "--------------------\n"
             +  "        MENU        \n"
             + "--------------------\n"
             + "[1] - Gestao\n" 
@@ -69,6 +69,6 @@ public interface Menus {
             + "[4] - Remover Jogador";
     
     public final String MENU_ATUALIZAR_JOGO =
-              "[1] - Alterar o numero de golos da Equipe A"
+              "[1] - Alterar o numero de golos da Equipe A\n"
             + "[2] - Alterar o numero de golos da equipe B";
 }
