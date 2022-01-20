@@ -16,26 +16,32 @@ import programa.Validacao;
 public class ListaEquipe implements Menus{
     
     
-   
+    
     private Validacao validador = new Validacao();
     private  static ListaEncadeada<Equipe_Lista> listaEquipe = new ListaEncadeada<>();
-
+    
     public  static ListaEncadeada <Equipe_Lista> getListaEquipe() {
         return listaEquipe;
     }
     
     
     public Equipe_Lista retorneEquipe(String id){
-		No <Equipe_Lista> noTemp = listaEquipe.getInicio();
-		while(noTemp != null){
-		    if(noTemp.getElemento().getId().equals(id)){
-		    	break;				
-		    }else{
-			noTemp = noTemp.getProximo();
-		    }			
-		}
-                return noTemp.getElemento();
-	}
+        No <Equipe_Lista> noTemp = listaEquipe.getInicio();
+        if(noTemp == null){
+            return null;
+        }else{
+            while(noTemp != null){
+                if(noTemp.getElemento().getId().equals(id)){
+                    return noTemp.getElemento();   
+                }else{
+                    noTemp = noTemp.getProximo();
+                }
+            }
+            return null;
+            
+        }
+        
+    }
     
     
     BufferedReader x = new BufferedReader(new InputStreamReader(System.in));
@@ -44,6 +50,7 @@ public class ListaEquipe implements Menus{
     public void actualizarEquipe() throws IOException{
         System.out.println(Menus.MENU_ACTUALIZAR_EQUIPE);
         char op = ' ';
+        
         try{
             op = x.readLine().charAt(0);
         }catch(IOException e){
@@ -52,17 +59,30 @@ public class ListaEquipe implements Menus{
         }
         
         listaEquipe.mostrarLista();
+        
         String id = "" + validador.validaInt("Indique o ID da equipe",0, 9999);
         
         switch(op){
-            case '1':
-                String novoNome = validador.validaString("Introduza o novo nome", (byte) 1, (byte) 50);
-                retorneEquipe(id).setNome(novoNome);
-            break;
             
+            case '1':
+                if(retorneEquipe(id)!=null){
+                    String novoNome = validador.validaString("Introduza o novo nome", (byte) 1, (byte) 50);
+                    retorneEquipe(id).setNome(novoNome);
+                    System.out.println("Alterado com Sucesso");
+                }else{
+                    System.out.println("Nao Existe a equipe com o ID especificado");
+                }
+                
+                break;
+                
             case '2':
-                String novoNome_Coach = validador.validaString("Introduza o novo nome", (byte) 1, (byte) 50);
-                retorneEquipe(id).setNome(novoNome_Coach);
+                if(retorneEquipe(id)!=null){
+                    String novoNome_Coach = validador.validaString("Introduza o novo nome", (byte) 1, (byte) 50);
+                    retorneEquipe(id).setNome(novoNome_Coach);
+                    System.out.println("Alterado com Sucesso");
+                }else{
+                    System.out.println("Nao Existe a equipe com o ID especificado");
+                }
                 break;
             case '3':
                 retorneEquipe(id).adicionarJogador();
@@ -78,24 +98,37 @@ public class ListaEquipe implements Menus{
                 break;
             default:
                 break;
-        } 
+        }
         
     }
     
     public void eliminarEquipe() throws IOException{
-       listaEquipe.mostrarLista();
-       String id = "" + validador.validaInt("Introduza o ID da equipe: ", 0, 9999);
-       listaEquipe.eliminar(retorneEquipe(id));
+        listaEquipe.mostrarLista();
+        String id = "" + validador.validaInt("Introduza o ID da equipe: ", 0, 9999);
+        if(retorneEquipe(id)!=null){
+            listaEquipe.eliminar(retorneEquipe(id));
+            System.out.println("Eliminado com Sucesso!");
+        }else{
+            System.out.println("Nao Existe a equipe com o ID especificado");
+        }
+        
     }
     
     public void InserirEquipe() throws IOException{
-        Equipe_Lista equipe = new Equipe_Lista();
-        equipe.inserirNome();
-        equipe.inserirNome_Coach();
-        listaEquipe.inserir(equipe);
-        System.out.println("Feito com sucesso");
+        BufferedReader x = new BufferedReader(new InputStreamReader(System.in));
+        String resp = "S";
+        while(resp.equalsIgnoreCase("S")){
+            Equipe_Lista equipe = new Equipe_Lista();
+            equipe.inserirNome();
+            equipe.inserirNome_Coach();
+            listaEquipe.inserir(equipe);
+            System.out.println("Feito com sucesso");
+            System.out.println("------------------------");
+            System.out.println("Deseja inserir mais equipes?[S/N]");
+            resp = x.readLine();
+        }
     }
-
+    
     public void pesquisarJogador() throws IOException{
         listaEquipe.mostrarLista();
         String id = "" + validador.validaInt("Introduza o ID da equipe", 0, 9999);
