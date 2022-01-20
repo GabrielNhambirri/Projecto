@@ -7,12 +7,15 @@ public class ListaEncadeada <T extends Identificavel> {
     private No<T> actual;
     
     public void inserir(T elemento){
+        No<T> novoElemento = new No<T> (elemento);
         if(this.inicio == null && this.actual== null){
-            No<T> celula = new No<T> (elemento);
-            this.inicio = celula;
+            
+            this.inicio = novoElemento;
+            this.actual = novoElemento;
         }else{
-            No<T> celula = new No<T> (elemento);
-            this.actual = celula;
+            
+            this.actual.setProximo(novoElemento); ;
+            this.actual = novoElemento;
         }
         
     }
